@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Encryption</title>
+    <title>Text Encryption & Decryption</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <h2>Text Encryption</h2>
-    <label for="textInput">Enter Text:</label>
-    <input type="text" id="textInput" placeholder="Type your text here">
-    <button onclick="encryptText()">Encrypt</button>
-    
-    <h3>Encrypted Output:</h3>
-    <p id="encryptedOutput"></p>
+    <div class="container">
+        <h2>Text Encryption & Decryption</h2>
+        <label for="textInput">Enter Text:</label>
+        <input type="text" id="textInput" placeholder="Type your text here">
+        <button onclick="encryptText()">Encrypt</button>
+        <button onclick="decryptText()">Decrypt</button>
+        
+        <h3>Output:</h3>
+        <p id="outputText"></p>
+    </div>
 
     <!-- Include CryptoJS for AES encryption -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script>
+        const secretKey = "mySecretKey123"; // Ensure this key is secure
+
         function encryptText() {
-            // Get the text from input
             const text = document.getElementById("textInput").value;
-
-            // Define a secret key for encryption
-            const secretKey = "mySecretKey123"; // Ensure you use a secure key
-
-            // Encrypt the text using AES
             const encrypted = CryptoJS.AES.encrypt(text, secretKey).toString();
+            document.getElementById("outputText").textContent = "Encrypted: " + encrypted;
+        }
 
-            // Display the encrypted text
-            document.getElementById("encryptedOutput").textContent = encrypted;
+        function decryptText() {
+            const encryptedText = document.getElementById("textInput").value;
+            try {
+                const decrypted = CryptoJS.AES.decrypt(encryptedText, secretKey).toString(CryptoJS.enc.Utf8);
+                if (decrypted) {
+                    document.getElementById("outputText").textContent = "Decrypted: " + decrypted;
+                } else {
+                    document.getElementById("outputText").textContent = "Invalid encrypted text!";
+                }
+            } catch (e) {
+                document.getElementById("outputText").textContent = "Decryption failed. Invalid input!";
+            }
         }
     </script>
 </body>
