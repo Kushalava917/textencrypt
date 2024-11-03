@@ -1,0 +1,97 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input Field Styling */
+#textInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#textInput:focus {
+    border-color: #1e90ff;
+}
+
+#textInput:hover {
+    border-color: #00bfff;
+}
+
+/* Button Styling */
+button {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #00bfff;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1c86ee;
+    transform: scale(0.95);
+}
+
+/* Output Text Styling */
+#outputText {
+    margin-top: 1.5rem;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-left: 5px solid #1e90ff;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
