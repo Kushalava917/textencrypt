@@ -1,97 +1,117 @@
-/* General Styling */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Hacker/terminal-style font */
 }
 
 body {
+    background: #0d1117; /* Deep dark background for hacker theme */
+    color: #39ff14; /* Green text for the hacker vibe */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f5f6fa;
-    color: #333;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #333;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
-}
-
-/* Input Field Styling */
-#textInput {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-#textInput:focus {
-    border-color: #1e90ff;
-}
-
-#textInput:hover {
-    border-color: #00bfff;
-}
-
-/* Button Styling */
-button {
-    display: inline-block;
-    margin-top: 1rem;
-    margin-right: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #1e90ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #00bfff;
-    transform: scale(1.05);
-}
-
-button:active {
-    background-color: #1c86ee;
-    transform: scale(0.95);
-}
-
-/* Output Text Styling */
-#outputText {
-    margin-top: 1.5rem;
-    padding: 10px;
-    background-color: #f0f8ff;
-    border-left: 5px solid #1e90ff;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: #333;
-    word-wrap: break-word;
-    max-width: 100%;
+    padding: 20px;
 }
 
 /* Container Styling */
 .container {
-    max-width: 500px;
-    padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #161b22; /* Slightly lighter dark shade for contrast */
+    border: 1px solid #39ff14;
     border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #39ff14;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
     text-align: center;
+    border-bottom: 1px solid #39ff14;
+    padding-bottom: 10px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1rem;
+    color: #39ff14;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #39ff14;
+    border-radius: 5px;
+    background: #0d1117;
+    color: #39ff14;
+    font-size: 1rem;
+    outline: none;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+/* Buttons */
+button {
+    width: 48%;
+    padding: 10px;
+    margin: 10px 1%;
+    border: 1px solid #39ff14;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #0d1117;
+    background: #39ff14;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+button:hover {
+    background: #00ff99;
+    box-shadow: 0 0 15px #00ff99;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #39ff14;
+}
+
+/* Output Section */
+h3 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #39ff14;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+    border-bottom: 1px solid #39ff14;
+    padding-bottom: 5px;
+}
+
+#outputText {
+    margin-top: 10px;
+    background: #0d1117;
+    border: 1px solid #39ff14;
+    padding: 10px;
+    border-radius: 5px;
+    color: #39ff14;
+    font-size: 1rem;
+    overflow-wrap: break-word; /* Prevent text overflow */
+    max-height: 200px; /* Limit the height of the output */
+    overflow-y: auto; /* Add scroll for large outputs */
+    box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.5);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
 }
